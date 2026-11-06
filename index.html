@@ -8,61 +8,52 @@
 <style>
 
 body{
+    margin:0;
+    padding:20px;
     background:#f7f7f7;
     font-family:Arial,sans-serif;
-    padding:20px;
 }
 
 h1{
     text-align:center;
     color:#8f4bd8;
-}
-
-.controles{
-    max-width:400px;
-    margin:auto;
-    margin-bottom:20px;
-}
-
-select{
-    width:100%;
-    padding:12px;
-    font-size:16px;
+    margin-bottom:10px;
 }
 
 .escenario{
     position:relative;
     max-width:900px;
-    margin:auto;
+    margin:20px auto;
 }
 
-.capa{
-    position:absolute;
+.decoracion{
     width:100%;
-    left:0;
+    display:block;
 }
 
-#panel{
-    z-index:1;
-}
-
-#arco{
-    z-index:2;
-}
-
-#derecha{
-    z-index:3;
+.marca{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:45px;
+    font-weight:bold;
+    color:#000;
+    opacity:0.05;
+    pointer-events:none;
 }
 
 .happy{
     position:absolute;
-    top:43%;
+    top:34%;
     left:50%;
-    transform:translate(-50%,-50%);
-    z-index:5;
-    font-size:14px;
+    transform:translateX(-50%);
+    font-size:12px;
+    letter-spacing:3px;
     font-weight:bold;
-    letter-spacing:4px;
+    color:#000;
+    text-align:center;
 }
 
 </style>
@@ -72,56 +63,19 @@ select{
 
 <h1>🎈 JUL BALLOONS 🎈</h1>
 
-<div class="controles">
-
-<select id="colorPanel">
-<option value="white">Blanco</option>
-<option value="pink">Rosa</option>
-<option value="lightblue">Azul</option>
-<option value="lavender">Lila</option>
-<option value="gold">Dorado</option>
-<option value="black">Negro</option>
-</select>
-
-</div>
-
 <div class="escenario">
 
-<img
-src="panel.png"
-id="panel"
-class="capa">
+    <div class="marca">
+        JUL BALLOONS
+    </div>
 
-<img
-src="arco.png"
-id="arco"
-class="capa">
+    <img src="base.png" class="decoracion">
 
-<img
-src="derecha.png"
-id="derecha"
-class="capa">
-
-<div class="happy">
-HAPPY BIRTHDAY
-</div>
+    <div class="happy">
+        HAPPY BIRTHDAY
+    </div>
 
 </div>
-
-<script>
-
-document.getElementById("colorPanel")
-.addEventListener("change", function(){
-
-const color=this.value;
-
-document.getElementById("panel")
-.style.filter=
-`drop-shadow(0 0 0 ${color}) saturate(300%)`;
-
-});
-
-</script>
 
 </body>
 </html>
