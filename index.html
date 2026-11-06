@@ -3,166 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Jul Balloons</title>
 
 <style>
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f4f4f4;
     margin:0;
     padding:20px;
+    background:#f7f7f7;
+    font-family:Arial,sans-serif;
 }
 
 h1{
     text-align:center;
-    color:#c44cff;
-}
-
-.controles{
-    max-width:500px;
-    margin:auto;
-    margin-bottom:20px;
-}
-
-select,input{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
+    color:#8f4bd8;
 }
 
 .escenario{
     position:relative;
-    width:900px;
-    max-width:100%;
-    height:700px;
-    margin:auto;
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 0 10px rgba(0,0,0,.2);
+    max-width:900px;
+    margin:30px auto;
 }
 
-#panel{
-    position:absolute;
-    width:300px;
-    height:500px;
-    left:50%;
-    transform:translateX(-50%);
-    top:80px;
-    background:white;
-    border-radius:200px 200px 0 0;
-}
-
-#arco{
-    position:absolute;
-    width:350px;
-    left:40px;
-    top:130px;
-    z-index:2;
-}
-
-#derecha{
-    position:absolute;
-    width:220px;
-    right:40px;
-    bottom:120px;
-    z-index:2;
-}
-
-#nombreVista{
-    position:absolute;
+.decoracion{
     width:100%;
-    top:250px;
-    text-align:center;
-    font-size:38px;
-    font-weight:bold;
-    z-index:3;
+    display:block;
 }
 
-#edadVista{
+.marca{
     position:absolute;
-    width:100%;
-    top:320px;
-    text-align:center;
-    font-size:70px;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:45px;
     font-weight:bold;
-    z-index:3;
+    opacity:0.05;
+    pointer-events:none;
+}
+
+.happy{
+    position:absolute;
+    top:31%;
+    width:100%;
+    text-align:center;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:4px;
+    color:#000;
 }
 
 </style>
+
 </head>
+
 <body>
 
-<h1>🎈 Jul Balloons</h1>
-
-<div class="controles">
-
-<select id="colorPanel">
-    <option value="white">Blanco</option>
-    <option value="pink">Rosa</option>
-    <option value="lavender">Lila</option>
-    <option value="lightblue">Azul</option>
-    <option value="gold">Dorado</option>
-</select>
-
-<input
-type="text"
-id="nombre"
-placeholder="Nombre">
-
-<input
-type="number"
-id="edad"
-placeholder="Edad">
-
-</div>
+<h1>🎈 JUL BALLOONS 🎈</h1>
 
 <div class="escenario">
 
-<div id="panel"></div>
+    <div class="marca">
+        JUL BALLOONS
+    </div>
 
-<img id="arco" src="arco.jpg">
+    <img
+    src="base.png"
+    class="decoracion">
 
-<img id="derecha" src="derecha.jpg">
-
-<div id="nombreVista">
-Nombre
-</div>
-
-<div id="edadVista">
-0
-</div>
+    <div class="happy">
+        HAPPY BIRTHDAY
+    </div>
 
 </div>
-
-<script>
-
-document.getElementById("colorPanel")
-.addEventListener("change",function(){
-
-document.getElementById("panel")
-.style.background=this.value;
-
-});
-
-document.getElementById("nombre")
-.addEventListener("input",function(){
-
-document.getElementById("nombreVista")
-.innerText=this.value;
-
-});
-
-document.getElementById("edad")
-.addEventListener("input",function(){
-
-document.getElementById("edadVista")
-.innerText=this.value;
-
-});
-
-</script>
 
 </body>
 </html>
